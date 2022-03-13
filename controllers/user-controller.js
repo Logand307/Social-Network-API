@@ -22,10 +22,6 @@ const userController = {
   //   get one User by id
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
-      //   .populate({
-      //     path: "comments",
-      //     select: "-__v",
-      //   })
       .select("-__v")
       .then((dbUserData) => {
         if (!dbUserData) {
