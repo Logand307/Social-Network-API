@@ -119,14 +119,17 @@ const thoughtController = {
   deleteReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
-      { $pull: { reactions: { reactionId: params.reactionId } } },
-      { new: true }
+      { $pull: { reactions: { _id: params.reactionId } } },
+      { safe: true }
     )
       .then((dbUserData) => {
         if (!dbUserData) {
           res.status(404).json({ message: "No thoughts exist with this ID!" });
           return;
         }
+        return Thought.findById(params.thoughtId);
+      })
+      .then((dbUserData) => {
         res.json(dbUserData);
       })
       .catch((err) => res.status(400).json(err));
