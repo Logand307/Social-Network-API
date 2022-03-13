@@ -3,6 +3,9 @@
 Social-Network-API
 # Description
 This is the back-end for a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. 
+
+Check out this video I recorded with Screencastify: https://drive.google.com/file/d/1F_7JyBtJ9JEEB5vrrCy3_k6WlcGLnYj4/view
+
 # Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
